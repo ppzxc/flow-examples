@@ -1,16 +1,13 @@
 package org.example.reactive.flux;
 
 import java.time.Duration;
-import java.util.function.BiConsumer;
-import java.util.function.Function;
-import java.util.function.Predicate;
 import java.util.stream.IntStream;
 import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Slf4j
-public class FluxMain {
+public class FluxPractice01 {
 
   public static void main(String[] args) {
     fluxFromIntStream();
