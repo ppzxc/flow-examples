@@ -1,34 +1,59 @@
-plugins {
-    id 'java'
+buildscript {
+    ext {
+        springBootVersion = '2.7.5'
+        dependencyManagementPluginVersion = '1.0.15.RELEASE'
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+        classpath "io.spring.gradle:dependency-management-plugin:${dependencyManagementPluginVersion}"
+    }
 }
 
-group 'org.example.reactive'
-version '1.0-SNAPSHOT'
-
-repositories {
-    mavenCentral()
+allprojects {
 }
 
-dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+subprojects {
+    apply plugin: 'java'
+//    apply plugin: 'idea'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
 
-    // LOMBOK
-    compileOnly 'org.projectlombok:lombok:1.18.24'
-    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    group 'kr.nanoit.mo'
+    version 'v0.0.1'
 
-    // LOGGING
-    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.4.4'
-    implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.4.4'
-    implementation group: 'ch.qos.logback', name: 'logback-access', version: '1.4.4'
-    implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.3'
+    sourceCompatibility = '17'
+    targetCompatibility = '17'
+    compileJava.options.encoding = 'UTF-8'
 
-    // REACTOR
-    implementation "io.projectreactor:reactor-core:3.5.0"
-    testImplementation "io.projectreactor:reactor-test:3.5.0"
-}
+    repositories {
+        mavenCentral()
+    }
 
+    dependencies {
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
 
-test {
-    useJUnitPlatform()
+        // LOMBOK
+        compileOnly 'org.projectlombok:lombok:1.18.24'
+        annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+        // LOGGING
+        implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.4.4'
+        implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.4.4'
+        implementation group: 'ch.qos.logback', name: 'logback-access', version: '1.4.4'
+        implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.3'
+
+        // REACTOR
+        implementation "io.projectreactor:reactor-core:3.5.0"
+        testImplementation "io.projectreactor:reactor-test:3.5.0"
+    }
+
+    test {
+        useJUnitPlatform()
+    }
 }

@@ -1,2 +1,5 @@
-rootProject.name = 'java-reactive-example'
+rootProject.name = 'java-example'
+include 'reactive-flow'
+include 'reactive-mono'
+include 'reactive-flux'
 
