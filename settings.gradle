@@ -1,5 +1,5 @@
 rootProject.name = 'java-example'
-include 'reactive-flow'
-include 'reactive-mono'
-include 'reactive-flux'
+include 'example-01-concurrent-flow'
+include 'example-02-reactive-mono'
+include 'example-03-reactive-flux'
 

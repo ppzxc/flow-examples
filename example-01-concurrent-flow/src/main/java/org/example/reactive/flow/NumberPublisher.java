@@ -7,12 +7,12 @@ import java.util.concurrent.atomic.AtomicLong;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class NumberGeneratorPublisher implements Publisher<Long> {
+public class NumberPublisher implements Publisher<Long> {
 
   private final Long maxValue;
   private final AtomicLong numberGenerator;
 
-  public NumberGeneratorPublisher(long maxValue) {
+  public NumberPublisher(long maxValue) {
     this.maxValue = maxValue;
     this.numberGenerator = new AtomicLong(0);
   }
