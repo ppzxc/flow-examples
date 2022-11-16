@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'org.example.flow'
+group 'org.example.reactive'
 version '1.0-SNAPSHOT'
 
 repositories {

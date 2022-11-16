@@ -1,4 +1,4 @@
-package org.example.flow;
+package org.example.reactive.flow;
 
 import java.util.concurrent.Flow.Subscriber;
 import java.util.concurrent.Flow.Subscription;

@@ -1,4 +1,4 @@
-package org.example.mono;
+package org.example.reactive.mono;
 
 import java.time.Duration;
 import java.util.stream.IntStream;
