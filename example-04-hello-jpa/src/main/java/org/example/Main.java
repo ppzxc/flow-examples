@@ -9,24 +9,24 @@ import org.example.entity.Member;
 public class Main {
 
   public static void main(String[] args) {
-    EntityManagerFactory emf = Persistence.createEntityManagerFactory("hello");
+    EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("hello");
 
-    EntityManager em = emf.createEntityManager();
-    EntityTransaction tx = em.getTransaction();
+    EntityManager entityManager = entityManagerFactory.createEntityManager();
+    EntityTransaction tx = entityManager.getTransaction();
     tx.begin();
 
     try {
       Member member = new Member();
       member.setId(1L);
       member.setName("조정하");
-      em.persist(member);
+      entityManager.persist(member);
       tx.commit();
     } catch (Exception e) {
       tx.rollback();
     } finally {
-      em.close();
+      entityManager.close();
     }
 
-    emf.close();
+    entityManagerFactory.close();
   }
 }
