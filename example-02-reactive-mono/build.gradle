@@ -1,2 +1,5 @@
 dependencies {
+    // REACTOR
+    implementation "io.projectreactor:reactor-core:3.5.0"
+    testImplementation "io.projectreactor:reactor-test:3.5.0"
 }

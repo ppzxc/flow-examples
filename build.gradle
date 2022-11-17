@@ -9,8 +9,8 @@ buildscript {
     }
 
     dependencies {
-        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
-        classpath "io.spring.gradle:dependency-management-plugin:${dependencyManagementPluginVersion}"
+//        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+//        classpath "io.spring.gradle:dependency-management-plugin:${dependencyManagementPluginVersion}"
     }
 }
 
@@ -20,8 +20,8 @@ allprojects {
 subprojects {
     apply plugin: 'java'
 //    apply plugin: 'idea'
-    apply plugin: 'org.springframework.boot'
-    apply plugin: 'io.spring.dependency-management'
+//    apply plugin: 'org.springframework.boot'
+//    apply plugin: 'io.spring.dependency-management'
 
     group 'kr.nanoit.mo'
     version 'v0.0.1'
@@ -47,10 +47,6 @@ subprojects {
         implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.4.4'
         implementation group: 'ch.qos.logback', name: 'logback-access', version: '1.4.4'
         implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.3'
-
-        // REACTOR
-        implementation "io.projectreactor:reactor-core:3.5.0"
-        testImplementation "io.projectreactor:reactor-test:3.5.0"
     }
 
     test {

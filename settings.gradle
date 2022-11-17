@@ -2,4 +2,5 @@ rootProject.name = 'java-example'
 include 'example-01-concurrent-flow'
 include 'example-02-reactive-mono'
 include 'example-03-reactive-flux'
+include 'example-04-hello-jpa'
 
