@@ -1,9 +1,9 @@
 package org.example.entity;
 
+import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,13 +14,11 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Member {
+public class Team {
 
   @Id
   private Long id;
-  private String name;
 
-  @ManyToOne(targetEntity = Team.class)
-  @JoinColumn(name = "team_id")
-  private Team team;
+  @OneToMany(targetEntity = Member.class, mappedBy = "team")
+  private Set<Member> members;
 }
