@@ -3,6 +3,7 @@
 
   <persistence-unit name="hello">
     <class>org.example.entity.Member</class>
+    <class>org.example.entity.Team</class>
     <properties>
       <!-- 필수 속성 -->
       <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
@@ -16,6 +17,8 @@
       <property name="hibernate.format_sql" value="true"/>
       <property name="hibernate.use_sql_comments" value="true"/>
       <property name="hibernate.id.new_generator_mappings" value="true"/>
+
+      <property name="hibernate.hbm2ddl.auto" value="create"/>
     </properties>
   </persistence-unit>
 </persistence>

@@ -1,10 +1,12 @@
 package org.example;
 
+import java.util.Set;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import org.example.entity.Member;
+import org.example.entity.Team;
 
 public class Main {
 
@@ -16,10 +18,15 @@ public class Main {
     tx.begin();
 
     try {
+      Team team = new Team();
+      team.setName("new team");
+      entityManager.persist(team);
+
       Member member = new Member();
-      member.setId(1L);
-      member.setName("조정하");
+      member.setName("조정하2");
       entityManager.persist(member);
+
+      team.setMembers(Set.of(member));
       tx.commit();
     } catch (Exception e) {
       tx.rollback();
