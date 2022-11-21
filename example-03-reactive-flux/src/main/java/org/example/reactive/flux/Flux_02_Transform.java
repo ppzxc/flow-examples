@@ -1,6 +1,8 @@
 package org.example.reactive.flux;
 
 import java.time.Duration;
+import java.util.function.BiFunction;
+import java.util.function.Predicate;
 import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -79,6 +81,26 @@ public class Flux_02_Transform {
 
     log.info("11 ?? WHY PARALLEL");
     Flux.from(randomStringPublisher())
+        .log()
+        .blockLast();
+
+    Flux.from(randomStringPublisher())
+        .startWith("#", "$")
+        .log()
+        .blockLast();
+
+    Flux.from(randomStringPublisher())
+        .concatWithValues("#", "$")
+        .log()
+        .blockLast();
+
+    Flux.from(randomStringPublisher())
+        .reduce((input1, input2) -> input1 + input2)
+        .log()
+        .block();
+
+    Flux.from(randomStringPublisher())
+        .scan((input1, input2) -> input1 + input2)
         .log()
         .blockLast();
   }
