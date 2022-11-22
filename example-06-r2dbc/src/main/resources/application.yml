@@ -1,0 +1,18 @@
+spring:
+  config:
+    activate:
+      on-profile: r2dbc
+  application:
+    name: r2dbc
+
+data:
+  r2dbc:
+    host: 192.168.0.64
+    port: 5432
+    database: mo
+    username: mo
+    password: motest
+
+logging:
+  level:
+    root: INFO
