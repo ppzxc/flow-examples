@@ -4,5 +4,4 @@ include 'example-02-reactive-mono'
 include 'example-03-reactive-flux'
 include 'example-04-hello-jpa'
 include 'example-05-reactive-mongodb'
-include 'example-06-r2dbc'
 
