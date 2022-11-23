@@ -3,6 +3,7 @@ package org.example.jpa.schema.blog.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -14,7 +15,7 @@ import javax.persistence.*;
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "name", nullable = false)
+    @Column(name = "id", nullable = false)
     private Long id;
 
     @Column(name = "title", nullable = false, length = 128)
@@ -31,6 +32,7 @@ public class Post {
     @JoinColumn(name = "author_id", nullable = false)
     private Author author;
 
-    @Column(name = "tags", nullable = false, length = 128)
-    private String tags;
+    @ToString.Exclude
+    @OneToMany(targetEntity = Hash.class, mappedBy = "post")
+    private Set<Hash> hash;
 }

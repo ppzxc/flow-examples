@@ -3,6 +3,7 @@ package org.example.jpa.schema.blog.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -20,4 +21,8 @@ public class Tag {
 
     @Column(name = "name", nullable = false, length = 64)
     private String name;
+
+    @ToString.Exclude
+    @OneToMany(targetEntity = Hash.class, mappedBy = "tag")
+    private Set<Hash> hash;
 }
