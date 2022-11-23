@@ -1,9 +1,10 @@
 # Java Example Practice
 
-- [Flow Main](https://github.com/ppzxc/java-example/blob/main/example-01-concurrent-flow/src/main/java/org/example/reactive/flow/Main.java)
-- [Mono Main](https://github.com/ppzxc/java-example/blob/main/example-02-reactive-mono/src/main/java/org/example/reactive/mono/MonoMain.java)
-- [Flux01](https://github.com/ppzxc/java-example/blob/main/example-03-reactive-flux/src/main/java/org/example/reactive/flux/Flux01.java)
-- [Flux02](https://github.com/ppzxc/java-example/blob/main/example-03-reactive-flux/src/main/java/org/example/reactive/flux/Flux02.java)
+- [Flow](https://github.com/ppzxc/java-practice/tree/main/practice-01-concurrent-flow/src/main/java/org/example/reactive/flow)
+- [Mono](https://github.com/ppzxc/java-practice/tree/main/practice-02-reactive-mono/src/main/java/org/example/reactive/mono)
+- [Flux](https://github.com/ppzxc/java-practice/tree/main/practice-03-reactive-flux/src/main/java/org/example/reactive/flux)
+- [JPA](https://github.com/ppzxc/java-practice/tree/main/practice-04-hello-jpa/src/main/java/org/example)
+- [Reactive Mongo](https://github.com/ppzxc/java-practice/tree/main/practice-05-reactive-mongodb)
 
 # Reference
 
