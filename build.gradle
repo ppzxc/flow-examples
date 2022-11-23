@@ -9,8 +9,8 @@ buildscript {
     }
 
     dependencies {
-//        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
-//        classpath "io.spring.gradle:dependency-management-plugin:${dependencyManagementPluginVersion}"
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+        classpath "io.spring.gradle:dependency-management-plugin:${dependencyManagementPluginVersion}"
     }
 }
 
@@ -19,11 +19,11 @@ allprojects {
 
 subprojects {
     apply plugin: 'java'
-//    apply plugin: 'idea'
-//    apply plugin: 'org.springframework.boot'
-//    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'idea'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
 
-    group 'kr.nanoit.mo'
+    group 'org.example'
     version 'v0.0.1'
 
     sourceCompatibility = '17'

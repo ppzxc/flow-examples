@@ -2,6 +2,6 @@ rootProject.name = 'java-practice'
 include 'practice-01-concurrent-flow'
 include 'practice-02-reactive-mono'
 include 'practice-03-reactive-flux'
-include 'practice-04-hello-jpa'
-include 'practice-05-reactive-mongodb'
+include 'practice-04-entitymanager'
+include 'practice-05-jpa-schema'
 
