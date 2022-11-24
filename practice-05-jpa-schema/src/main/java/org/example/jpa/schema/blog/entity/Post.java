@@ -33,6 +33,6 @@ public class Post {
     private Author author;
 
     @ToString.Exclude
-    @OneToMany(targetEntity = Hash.class, mappedBy = "post")
-    private Set<Hash> hash;
+    @OneToMany(targetEntity = Tag.class, mappedBy = "post")
+    private Set<Tag> tags;
 }

@@ -3,6 +3,7 @@ package org.example.jpa.schema.blog.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -10,20 +11,18 @@ import javax.persistence.*;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "blog_hash")
-public class Hash {
+@Entity(name = "blog_hash_tag")
+public class HashTag {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @ToString.Exclude
-    @ManyToOne(targetEntity = Post.class, fetch = FetchType.LAZY)
-    @JoinColumn(name = "post_id")
-    private Post post;
+    @Column(name = "name", nullable = false, length = 64)
+    private String name;
 
     @ToString.Exclude
-    @ManyToOne(targetEntity = Tag.class, fetch = FetchType.LAZY)
-    @JoinColumn(name = "tag_id")
-    private Tag tag;
+    @OneToMany(targetEntity = Tag.class, mappedBy = "tag")
+    private Set<Tag> tags;
 }
