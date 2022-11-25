@@ -41,12 +41,6 @@ subprojects {
         // LOMBOK
         compileOnly 'org.projectlombok:lombok:1.18.24'
         annotationProcessor 'org.projectlombok:lombok:1.18.24'
-
-        // LOGGING
-        implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.4.4'
-        implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.4.4'
-        implementation group: 'ch.qos.logback', name: 'logback-access', version: '1.4.4'
-        implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.3'
     }
 
     test {

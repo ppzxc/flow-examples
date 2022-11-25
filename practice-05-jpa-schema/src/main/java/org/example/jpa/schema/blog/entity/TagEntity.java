@@ -11,19 +11,19 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity(name = "blog_tag")
-public class Tag {
+public class TagEntity extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 
     @ToString.Exclude
-    @ManyToOne(targetEntity = Post.class, fetch = FetchType.LAZY)
+    @ManyToOne(targetEntity = PostEntity.class, fetch = FetchType.LAZY)
     @JoinColumn(name = "post_id")
-    private Post post;
+    private PostEntity post;
 
     @ToString.Exclude
-    @ManyToOne(targetEntity = HashTag.class, fetch = FetchType.LAZY)
+    @ManyToOne(targetEntity = HashTagEntity.class, fetch = FetchType.LAZY)
     @JoinColumn(name = "tag_id")
-    private HashTag hashTag;
+    private HashTagEntity hashTag;
 }

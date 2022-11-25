@@ -12,7 +12,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity(name = "blog_member")
-public class Member {
+public class MemberEntity extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,6 +29,6 @@ public class Member {
     private String email;
 
     @ToString.Exclude
-    @OneToMany(targetEntity = Author.class, mappedBy = "member", fetch = FetchType.LAZY)
-    private Set<Author> authors;
+    @OneToMany(targetEntity = AuthorEntity.class, mappedBy = "member", fetch = FetchType.LAZY)
+    private Set<AuthorEntity> authors;
 }

@@ -11,8 +11,8 @@ import java.util.Set;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "blog_author")
-public class Author {
+@Entity(name = "blog_hash_tag")
+public class HashTagEntity extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,11 +23,6 @@ public class Author {
     private String name;
 
     @ToString.Exclude
-    @ManyToOne(targetEntity = Member.class, fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id", nullable = false)
-    private Member member;
-
-    @ToString.Exclude
-    @OneToMany(targetEntity = Post.class, mappedBy = "author", fetch = FetchType.LAZY)
-    private Set<Post> posts;
+    @OneToMany(targetEntity = TagEntity.class, mappedBy = "hashTag")
+    private Set<TagEntity> tags;
 }

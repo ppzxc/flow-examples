@@ -12,7 +12,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity(name = "blog_post")
-public class Post {
+public class PostEntity extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -28,11 +28,11 @@ public class Post {
     private String content;
 
     @ToString.Exclude
-    @ManyToOne(targetEntity = Author.class, fetch = FetchType.LAZY)
+    @ManyToOne(targetEntity = AuthorEntity.class, fetch = FetchType.LAZY)
     @JoinColumn(name = "author_id", nullable = false)
-    private Author author;
+    private AuthorEntity author;
 
     @ToString.Exclude
-    @OneToMany(targetEntity = Tag.class, mappedBy = "post")
-    private Set<Tag> tags;
+    @OneToMany(targetEntity = TagEntity.class, mappedBy = "post")
+    private Set<TagEntity> tags;
 }

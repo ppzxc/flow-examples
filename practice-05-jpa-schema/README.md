@@ -1,6 +1,6 @@
 # blog schema diagram
 
-- ![DIAGRAM](./img/diagram.png)
+- ![DIAGRAM_V1](./img/blog_diagram_v1.png)
 
 # store schema diagram
 
