@@ -23,6 +23,6 @@ public class HashTagEntity extends BaseEntity {
     private String name;
 
     @ToString.Exclude
-    @OneToMany(targetEntity = TagEntity.class, mappedBy = "hashTag")
+    @OneToMany(targetEntity = TagEntity.class, fetch = FetchType.LAZY, mappedBy = "hashTag", orphanRemoval = true)
     private Set<TagEntity> tags;
 }

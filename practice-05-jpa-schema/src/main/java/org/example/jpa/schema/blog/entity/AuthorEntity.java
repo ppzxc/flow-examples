@@ -28,6 +28,6 @@ public class AuthorEntity extends BaseEntity {
     private MemberEntity member;
 
     @ToString.Exclude
-    @OneToMany(targetEntity = PostEntity.class, mappedBy = "author", fetch = FetchType.LAZY)
+    @OneToMany(targetEntity = PostEntity.class, fetch = FetchType.LAZY, mappedBy = "author", orphanRemoval = true)
     private Set<PostEntity> posts;
 }

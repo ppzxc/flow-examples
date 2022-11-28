@@ -33,10 +33,10 @@ public class PostEntity extends BaseEntity {
     private AuthorEntity author;
 
     @ToString.Exclude
-    @OneToMany(targetEntity = CommentEntity.class, fetch = FetchType.LAZY, mappedBy = "post")
+    @OneToMany(targetEntity = CommentEntity.class, fetch = FetchType.LAZY, mappedBy = "post", orphanRemoval = true)
     private Set<CommentEntity> comments;
 
     @ToString.Exclude
-    @OneToMany(targetEntity = TagEntity.class, fetch = FetchType.LAZY, mappedBy = "post")
+    @OneToMany(targetEntity = TagEntity.class, fetch = FetchType.LAZY, mappedBy = "post", orphanRemoval = true)
     private Set<TagEntity> tags;
 }

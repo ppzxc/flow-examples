@@ -29,6 +29,6 @@ public class MemberEntity extends BaseEntity {
     private String email;
 
     @ToString.Exclude
-    @OneToMany(targetEntity = AuthorEntity.class, mappedBy = "member", fetch = FetchType.LAZY)
+    @OneToMany(targetEntity = AuthorEntity.class, fetch = FetchType.LAZY, mappedBy = "member", orphanRemoval = true)
     private Set<AuthorEntity> authors;
 }

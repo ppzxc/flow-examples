@@ -30,6 +30,6 @@ public class CommentEntity extends BaseEntity {
     private PostEntity post;
 
     @ToString.Exclude
-    @OneToMany(targetEntity = ReplyEntity.class, fetch = FetchType.LAZY, mappedBy = "comment")
+    @OneToMany(targetEntity = ReplyEntity.class, fetch = FetchType.LAZY, mappedBy = "comment", orphanRemoval = true)
     private Set<ReplyEntity> replies;
 }
