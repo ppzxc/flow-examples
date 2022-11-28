@@ -3,6 +3,7 @@ package org.example.jpa.schema.blog.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -25,6 +26,10 @@ public class CommentEntity extends BaseEntity {
 
     @ToString.Exclude
     @ManyToOne(targetEntity = PostEntity.class, fetch = FetchType.LAZY)
-    @JoinColumn(name = "post_id", nullable = false)
+    @JoinColumn(name = "post_id")
     private PostEntity post;
+
+    @ToString.Exclude
+    @OneToMany(targetEntity = ReplyEntity.class, fetch = FetchType.LAZY, mappedBy = "comment")
+    private Set<ReplyEntity> replies;
 }

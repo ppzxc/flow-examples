@@ -3,6 +3,8 @@ package org.example.jpa.schema.blog.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serial;
+import java.io.Serializable;
 
 @Getter
 @Setter

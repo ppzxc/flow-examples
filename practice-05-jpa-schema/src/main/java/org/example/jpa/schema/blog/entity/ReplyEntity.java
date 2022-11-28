@@ -16,4 +16,15 @@ public class ReplyEntity extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
+
+    @Column(name = "message", nullable = false, length = 128)
+    private String message;
+
+    @Column(name = "writer", nullable = false, length = 128)
+    private String writer;
+
+    @ToString.Exclude
+    @ManyToOne(targetEntity = CommentEntity.class, fetch = FetchType.LAZY)
+    @JoinColumn(name = "comment_id", nullable = false)
+    private CommentEntity comment;
 }
