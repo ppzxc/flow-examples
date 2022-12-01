@@ -1,4 +1,6 @@
 dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter:2.7.5'
+
     // REACTOR
     implementation "io.projectreactor:reactor-core:3.5.0"
     testImplementation "io.projectreactor:reactor-test:3.5.0"
